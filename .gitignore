@@ -1,0 +1,24 @@
+# FlowStory - Git Ignore
+
+# Presentation framework (local only)
+slides/
+
+# Plans and reports (local only)
+plans/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencies
+node_modules/
+.venv/
+
+# Logs
+*.log
