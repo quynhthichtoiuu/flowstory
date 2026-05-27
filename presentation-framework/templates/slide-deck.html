@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>[TITLE] — Slide Deck</title>
+<meta name="description" content="[DESCRIPTION]" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap&subset=vietnamese" rel="stylesheet" />
+
+<link rel="stylesheet" href="design-tokens.css" />
+<link rel="stylesheet" href="components.css" />
+<link rel="stylesheet" href="animations.css" />
+</head>
+<body>
+
+<main class="deck" id="deck">
+
+  <!-- ============ SLIDE 1: COVER ============ -->
+  <section class="slide dark" data-title="Cover">
+    <span class="slide-num">01 / 05</span>
+    <div class="wrap">
+      <div class="hero-stage" style="display: flex; flex-direction: column; gap: 32px;">
+        <span class="eyebrow"><span class="bullet"></span>Workshop · Session N</span>
+        <h1 style="font-size: var(--text-hero);">[Main Title]<br/>[Subtitle]</h1>
+        <p class="lede big">[One-line description of what this presentation covers.]</p>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; font-family: var(--font-head); font-size: 14px; color: var(--mid); margin-top: 12px;">
+          <span>📅 [Date]</span>
+          <span>⏱ [Duration]</span>
+          <span>🌐 [Language]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 2: AGENDA ============ -->
+  <section class="slide" data-title="Agenda">
+    <span class="slide-num">02 / 05</span>
+    <div class="wrap">
+      <div class="slide-kicker">Agenda</div>
+      <h1>Today's Topics</h1>
+      <p class="lede">[Brief overview of what will be covered.]</p>
+
+      <div class="pts">
+        <div class="pt">
+          <div class="n">PART 1 · 20'</div>
+          <h4>[Topic 1]</h4>
+          <p>[Brief description of topic 1.]</p>
+        </div>
+        <div class="pt">
+          <div class="n">PART 2 · 30'</div>
+          <h4>[Topic 2]</h4>
+          <p>[Brief description of topic 2.]</p>
+        </div>
+        <div class="pt">
+          <div class="n">PART 3 · 25'</div>
+          <h4>[Topic 3]</h4>
+          <p>[Brief description of topic 3.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 3: COMPARISON ============ -->
+  <section class="slide" data-title="Comparison">
+    <span class="slide-num">03 / 05</span>
+    <div class="wrap">
+      <div class="slide-kicker">Problem · Solution</div>
+      <h1>[What changed?]</h1>
+
+      <div class="cmp">
+        <div class="col bad">
+          <div class="head"><span class="lbl">Before</span></div>
+          <h3>[Previous State]</h3>
+          <ul>
+            <li>[Issue 1]</li>
+            <li>[Issue 2]</li>
+            <li>[Issue 3]</li>
+          </ul>
+        </div>
+        <div class="col good">
+          <div class="head"><span class="lbl">After</span></div>
+          <h3>[New State]</h3>
+          <ul>
+            <li>[Improvement 1]</li>
+            <li>[Improvement 2]</li>
+            <li>[Improvement 3]</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 4: DEMO ============ -->
+  <section class="slide dark" data-title="Demo">
+    <span class="slide-num">04 / 05</span>
+    <div class="wrap">
+      <div class="slide-kicker">Live Demo</div>
+      <h1>[Demo Title]</h1>
+      <p class="lede">[What will be demonstrated.]</p>
+
+      <div class="term">
+        <div class="content"><span class="p">❯</span> <span class="c">[command]</span> <span class="u">[arguments]</span>
+<span class="d">// [comment]</span>
+<span class="g">✓ [success message]</span></div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="v">[N]</span>
+          <span class="k">[metric 1]</span>
+        </div>
+        <div class="stat">
+          <span class="v">[N]s</span>
+          <span class="k">[metric 2]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 5: Q&A ============ -->
+  <section class="slide" data-title="Q&A">
+    <span class="slide-num">05 / 05</span>
+    <div class="wrap">
+      <div class="slide-kicker">Q&A</div>
+      <h1>Questions?</h1>
+
+      <details class="qa">
+        <summary>[Common question 1?]</summary>
+        <div class="body">[Answer to question 1.]</div>
+      </details>
+      <details class="qa">
+        <summary>[Common question 2?]</summary>
+        <div class="body">[Answer to question 2.]</div>
+      </details>
+
+      <div class="deeplinks">
+        <span class="dlabel">Resources</span>
+        <a class="dl" href="#">Documentation</a>
+        <a class="dl" href="#">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Presenter Bar -->
+<div class="bar" id="bar">
+  <button onclick="prevSlide()">← Prev</button>
+  <span class="pg" id="pg">1 / 5</span>
+  <button onclick="nextSlide()">Next →</button>
+  <button onclick="toggleNotes()">Notes</button>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+let current = 0;
+
+function updateSlide() {
+  slides.forEach((s, i) => s.classList.toggle('in-view', i === current));
+  slides[current].scrollIntoView({ behavior: 'smooth' });
+  document.getElementById('pg').textContent = `${current + 1} / ${slides.length}`;
+}
+
+function nextSlide() { if (current < slides.length - 1) { current++; updateSlide(); } }
+function prevSlide() { if (current > 0) { current--; updateSlide(); } }
+function toggleNotes() { /* TODO: implement notes panel */ }
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+  if (e.key === 'ArrowLeft') prevSlide();
+});
+
+// Initial state
+updateSlide();
+</script>
+</body>
+</html>

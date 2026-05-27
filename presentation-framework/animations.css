@@ -1,0 +1,101 @@
+/* FlowStory Animations
+   Import: @import url('./animations.css');
+*/
+
+/* === FADE & SLIDE === */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* === PULSE & BREATH === */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+
+@keyframes marker-breath {
+  0%, 100% { transform: scale(1); opacity: 0; }
+  50% { transform: scale(1.9); opacity: 0.55; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* === TERMINAL === */
+@keyframes caret-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* === FLOW & MOTION === */
+@keyframes dash-flow {
+  to { stroke-dashoffset: -20; }
+}
+
+@keyframes wave-expand {
+  0% { r: 6; opacity: 1; }
+  100% { r: 44; opacity: 0; }
+}
+
+@keyframes qr-scan {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.6; }
+}
+
+/* === FLOATING PARTICLES === */
+@keyframes mote-float-a {
+  0% { transform: translate(0, 0); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translate(40px, -6px); opacity: 0; }
+}
+
+@keyframes mote-float-b {
+  0% { transform: translate(0, 0); opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { transform: translate(-30px, 8px); opacity: 0; }
+}
+
+/* === MECHANICAL === */
+@keyframes clock-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes belt-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(30px); }
+}
+
+/* === UTILITY CLASSES === */
+.ping { animation: marker-breath 2.6s ease-in-out infinite; }
+.pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+.caret { animation: caret-blink 1s infinite; }
+.flow { stroke-dasharray: 5 5; animation: dash-flow 1.2s linear infinite; }
+
+.mote { transform-origin: center; transform-box: fill-box; }
+.mote-a { animation: mote-float-a 3s ease-in-out infinite; }
+.mote-b { animation: mote-float-b 3.5s ease-in-out infinite; }
+.mote-delay-1 { animation-delay: 0.8s; }
+.mote-delay-2 { animation-delay: 1.6s; }
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  .ping, .pulse-soft, .caret, .flow,
+  .mote-a, .mote-b,
+  [class*="animate-"] {
+    animation: none !important;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}

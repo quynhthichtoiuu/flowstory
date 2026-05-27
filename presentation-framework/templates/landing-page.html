@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>[PRODUCT NAME] — [Tagline]</title>
+<meta name="description" content="[SEO description]" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap&subset=vietnamese" rel="stylesheet" />
+
+<link rel="stylesheet" href="design-tokens.css" />
+<link rel="stylesheet" href="components.css" />
+<link rel="stylesheet" href="animations.css" />
+<style>
+  section { padding: 80px 0; border-top: 1px solid var(--light-gray); }
+  .hero { padding: 88px 0 64px; border-top: none; }
+  .section-head { margin-bottom: 48px; max-width: 62ch; }
+  .section-head h2 { font-size: clamp(1.85rem, 3.2vw, 2.6rem); }
+  .bullets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  @media (max-width: 820px) { .bullets { grid-template-columns: 1fr; } }
+  .bullet-card { padding: 28px 0 0; border-top: 2px solid var(--dark); }
+  .bullet-card .num { font-family: var(--font-head); font-size: 14px; color: var(--mid); letter-spacing: 0.08em; margin-bottom: 12px; }
+  .bullet-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+  .bullet-card p { font-size: 16px; line-height: 1.65; opacity: 0.85; margin: 0; }
+  .feature { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: start; }
+  .feature + .feature { margin-top: 80px; }
+  .feature.reverse { grid-template-columns: 1.1fr 1fr; }
+  .feature.reverse .copy { order: 2; }
+  @media (max-width: 820px) { .feature, .feature.reverse { grid-template-columns: 1fr; } .feature.reverse .copy { order: 0; } }
+  .feature .tagline { font-family: var(--font-head); font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; margin-bottom: 12px; color: var(--gold); }
+  .feature h3 { font-size: clamp(1.4rem, 2.3vw, 1.9rem); margin-bottom: 14px; }
+  .feature .visual { background: var(--light-gray); border-radius: var(--radius); padding: 24px; font-family: var(--font-mono); font-size: 14px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .meta { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 24px; font-family: var(--font-head); font-size: 14px; color: var(--dark); opacity: 0.72; }
+  footer { padding: 40px 0 60px; border-top: 1px solid var(--light-gray); font-family: var(--font-head); font-size: 14px; color: var(--dark); opacity: 0.7; }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a href="#" class="brand">[Product Name]</a>
+    <div class="links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#docs">Docs</a>
+      <a href="#github">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="bullet"></span>[Category]</span>
+    <h1 style="font-size: clamp(2.6rem, 6.2vw, 4.75rem); max-width: 16ch;">[Product] <span class="accent">[action]</span> [benefit]</h1>
+    <p class="lede">[One or two sentences explaining what the product does and why it matters.]</p>
+    <div class="cta-row">
+      <a href="#" class="btn btn-primary">Get Started</a>
+      <a href="#" class="btn btn-ghost">View Demo</a>
+    </div>
+    <div class="meta">
+      <span>✓ [Benefit 1]</span>
+      <span>✓ [Benefit 2]</span>
+      <span>✓ [Benefit 3]</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM/SOLUTION -->
+<section id="problem">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="slide-kicker">The Problem</div>
+      <h2>[Why does this product exist?]</h2>
+      <p>[Explain the pain point this solves.]</p>
+    </div>
+    <div class="cmp">
+      <div class="col bad">
+        <div class="head"><span class="lbl">Without [Product]</span></div>
+        <h3>[Pain Point]</h3>
+        <ul>
+          <li>[Issue 1]</li>
+          <li>[Issue 2]</li>
+          <li>[Issue 3]</li>
+        </ul>
+      </div>
+      <div class="col good">
+        <div class="head"><span class="lbl">With [Product]</span></div>
+        <h3>[Solution]</h3>
+        <ul>
+          <li>[Benefit 1]</li>
+          <li>[Benefit 2]</li>
+          <li>[Benefit 3]</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="slide-kicker">How It Works</div>
+      <h2>[Simple 3-step process]</h2>
+    </div>
+    <div class="bullets">
+      <div class="bullet-card">
+        <div class="num">01</div>
+        <h3>[Step 1 Title]</h3>
+        <p>[Description of step 1.]</p>
+      </div>
+      <div class="bullet-card">
+        <div class="num">02</div>
+        <h3>[Step 2 Title]</h3>
+        <p>[Description of step 2.]</p>
+      </div>
+      <div class="bullet-card">
+        <div class="num">03</div>
+        <h3>[Step 3 Title]</h3>
+        <p>[Description of step 3.]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="wrap">
+    <div class="feature">
+      <div class="copy">
+        <div class="tagline">Feature A</div>
+        <h3>[Feature Title]</h3>
+        <p>[Detailed description of this feature and its benefits.]</p>
+      </div>
+      <div class="visual">
+        <code>[Code example or diagram]</code>
+      </div>
+    </div>
+    <div class="feature reverse">
+      <div class="copy">
+        <div class="tagline">Feature B</div>
+        <h3>[Feature Title]</h3>
+        <p>[Detailed description of this feature and its benefits.]</p>
+      </div>
+      <div class="visual">
+        <code>[Code example or diagram]</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background: var(--dark); color: var(--light);">
+  <div class="wrap" style="text-align: center;">
+    <h2 style="color: var(--light);">[Ready to get started?]</h2>
+    <p style="opacity: 0.85; max-width: 500px; margin: 0 auto 24px;">[Final call to action.]</p>
+    <a href="#" class="btn btn-primary" style="background: var(--gold); border-color: var(--gold);">Start Now</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 [Company]. Built with FlowStory Framework.</p>
+  </div>
+</footer>
+
+</body>
+</html>
